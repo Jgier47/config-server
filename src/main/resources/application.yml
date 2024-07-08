@@ -1,0 +1,18 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          default-label: main
+          clone-on-start: 'true'
+          uri: https://github.com/Jgier47/config-server-repo/
+  application:
+    name: CONFIG-SERVER
+server:
+  port: '8888'
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: '5'
+    client:
+      serer:
+        defaultZone: ${EUREKA_SERVER_URL:http://localhost:8761/eureka/}
